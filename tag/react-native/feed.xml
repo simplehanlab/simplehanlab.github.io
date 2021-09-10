@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/react-native/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T09:38:03+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/react-native/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Mac 에서 React Native 개발 환경 세팅</title>
+      <link href="https://simplehanlab.github.io/react-native-ios" rel="alternate" type="text/html" title="Mac 에서 React Native 개발 환경 세팅" />
+      <published>2020-06-16T18:12:00+00:00</published>
+      <updated>2020-06-16T18:12:00+00:00</updated>
+      <id>https://simplehanlab.github.io/react-native-ios</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/react-native-ios">&lt;h1 id=&quot;mac-에서-react-native-개발하기&quot;&gt;Mac 에서 React Native 개발하기&lt;/h1&gt;
+
+&lt;h2 id=&quot;homebrew-설치&quot;&gt;Homebrew 설치&lt;/h2&gt;
+
+&lt;p&gt;※ Homebrew
+&lt;a href=&quot;https://brew.sh/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Homebrew는 맥(Mac)에서 패키지를 설치하고 관리하는 맥(Mac) 패키지 관리자입니다.&lt;/p&gt;
+
+&lt;p&gt;우선 아래 명령어를 통해 맥(Mac)에 Homebrew가 설치되었는지 확인해봅시다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew --version
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;만약 설치가 되었다면, 아래와 같이 버전을 확인 할 수 있습니다.
+&lt;span class=&quot;go&quot;&gt;homebrew x.x.x
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;homebrew/homebrew-core (git revision xxxx;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;last commit 2020-xx-xx&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;만약, 버전이 표시되지 않는다면 다음과 같이 명령어를 통해 Homebrew를 설치 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;/usr/bin/ruby -e &quot;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치가 정상적으로 완료되었다면, 이전에 실행한 버전확인 명령어를 통해 버전을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs-설치&quot;&gt;Nodejs 설치&lt;/h2&gt;
+
+&lt;p&gt;※ Nodejs
+&lt;a href=&quot;https://nodejs.org/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;React native는 Javascript이므로, Javascript의 런타임인 Nodejs가 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;이전에 설치한 Homebrew 명령어를 통해 Nodejs를 설치합시다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew install node
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nodejs를 설치하게되면, 기본적으로 Nodejs의 패키지 매니저인 NPM(Node Package Manager)도 같이 설치됩니다.&lt;/p&gt;
+
+&lt;p&gt;설치가 완료되었다면 다음의 명령어를 통해 버전을 확인 할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;node -version
+
+vx.x.x
+
+npm --version
+x.x.x
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;watchman-설치&quot;&gt;Watchman 설치&lt;/h2&gt;
+
+&lt;p&gt;※ Watchman
+&lt;a href=&quot;https://facebook.github.io/watchman/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Watchman은 특정 폴더나 파일을 감시하다가 변화가 생기면, 특정 동작을 실행하도록 설정하는 역할을 합니다.&lt;/p&gt;
+
+&lt;p&gt;react-native에서는 소스코드의 추가, 변경이 발생하면 다시 빌드하기 위해 Watchman을 사용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Watchman을 설치 하기 위하여 아래의 Homebrew 명령어를 통해 설치합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew install watchman
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치가 정상적으로 완료되었다면, 다음의 명령어를 통해 버전을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;watchman –version
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;react-native-cli-설치&quot;&gt;React Native CLI 설치&lt;/h2&gt;
+
+&lt;p&gt;※ React Native CLI
+&lt;a href=&quot;https://facebook.github.io/watchman/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;react-native로 앱을 개발하기 위해 필요한 React Native CLI를 설치합시다.&lt;/p&gt;
+
+&lt;p&gt;아래의 npm 명령어를 통해 React Native CLI를 설치 할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install -g react-native-cli
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치가 정상적으로 완료되었다면, 다음의 명령어를 통해 버전을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;react-native --version
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;xcode-설치&quot;&gt;XCode 설치&lt;/h2&gt;
+
+&lt;p&gt;※ Xcode
+&lt;a href=&quot;https://apps.apple.com/us/app/xcode/id497799835?mt=12&quot;&gt;다운로드 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS 개발을 하기 위해서는 Xcode가 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;위의 다운로드 링크를 통해 Xcode를 다운로드 합니다.&lt;/p&gt;
+
+&lt;p&gt;그 후 상단 메뉴에서 Xcode &amp;gt; Preferences… &amp;gt; Locations로 이동하여 아래와 같이 Command Line Tools가 잘 설정되었는지 확인합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react-native-ios\r1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만약 사진과 같이 설정되어 있지 않다면,&lt;/p&gt;
+
+&lt;p&gt;가장 최신의 Command Line Tools을 선택해 줍시다.&lt;/p&gt;
+
+&lt;h2 id=&quot;cocoapods-설치&quot;&gt;Cocoapods 설치&lt;/h2&gt;
+
+&lt;p&gt;※ Cocoapods
+&lt;a href=&quot;https://cocoapods.org/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cocoapods는 iOS 개발에 사용되는 의존성 관리자입니다.&lt;/p&gt;
+
+&lt;p&gt;react-native로 iOS 앱을 개발하려면 꼭 필요하므로 아래에 명령어를 사용하여 Cocoapods를 설치합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo gem install cocoapods
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치가 완료되면, 다음 명령어를 통해 정상적으로 되었는지 확인합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;pod --version
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;react-native-프로젝트-생성-및-확인&quot;&gt;React Native 프로젝트 생성 및 확인&lt;/h2&gt;
+
+&lt;p&gt;react-native는 버전에 따라 잘 동작하던 앱이 에러를 발생하는 등 문제를 일으킬 가능성이 높습니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 아래 npm 명령어를 통해 버전을 고정 시켜 사용하는 것을 추천합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm config set save-exact=true
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제 React Native CLI 명령어를 통해 프로젝트를 생성합니다&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;AppName 에 원하는 이름을 넣어 프로젝트를 생성 할 수 있습니다.
+&lt;span class=&quot;go&quot;&gt;react-native init AppName
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;생성이 완료되면 아래의 명령어를 통해 구동 할 수 있습니다&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;cd AppName
+
+npm run ios
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실행이 잘 되지 않는 경우, ios/AppName.xcworkspace 파일을 실행하고&lt;/p&gt;
+
+&lt;p&gt;왼쪽 상단의 시뮬레이터를 설정하고 화살표 버튼을 눌러 시뮬레이터를 실행합니다.&lt;/p&gt;
+
+&lt;p&gt;잘 실행이 되었다면, 아래와 같은 화면을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react-native-ios\r2.png&quot; alt=&quot;img&quot; /&gt;
+&lt;img src=&quot;\assets\images\react-native-ios\r3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="react-native" />
+      
+        <category term="ios" />
+      
+
+      
+        <summary type="html">Mac 에서 React Native 개발하기</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">window 에서 react-native 환경설정</title>
+      <link href="https://simplehanlab.github.io/react-native-preferences" rel="alternate" type="text/html" title="window 에서 react-native 환경설정" />
+      <published>2020-06-16T16:40:00+00:00</published>
+      <updated>2020-06-16T16:40:00+00:00</updated>
+      <id>https://simplehanlab.github.io/react-native-preferences</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/react-native-preferences">&lt;h1 id=&quot;react-native-환경설정&quot;&gt;react-native 환경설정&lt;/h1&gt;
+
+&lt;h2 id=&quot;jdk-80-다운받기&quot;&gt;JDK 8.0 다운받기&lt;/h2&gt;
+
+&lt;p&gt;※ node.js 사이트에서 다운로드 한다.
+&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;android-studio-다운받기&quot;&gt;Android Studio 다운받기&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.android.com/studio/?hl=ko&quot;&gt;https://developer.android.com/studio/?hl=ko&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;설치 후 실행하면 SDK를 자동으로 설치한다&lt;/p&gt;
+
+&lt;p&gt;안드로이드 스튜디오를 실행하여, 에뮬레이터를 추가한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-01.png&quot; alt=&quot;img&quot; /&gt;
+&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-02.png&quot; alt=&quot;img&quot; /&gt;
+&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-03.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;에뮬레이터를 사용할 수 없을 때는, 안드로이드 휴대폰을 pc와 연결한다&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs-다운받기&quot;&gt;node.js 다운받기&lt;/h2&gt;
+
+&lt;p&gt;※ node.js 사이트에서 다운로드 한다.
+&lt;a href=&quot;https://nodejs.org/ko/download/&quot;&gt;https://nodejs.org/ko/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-09.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 완료되면 nodejs가 설치된 폴더를 환경변수에 추가해준다&lt;/p&gt;
+
+&lt;p&gt;이후 프로그램 개발도구에서 명령어를 입력한다&lt;/p&gt;
+
+&lt;p&gt;필자는 Visual Studio를 사용한다&lt;/p&gt;
+
+&lt;h3 id=&quot;visual-studio를-실행-후-터미널에서-react-native-cli-설치-명령어를-입력한다&quot;&gt;Visual Studio를 실행 후 터미널에서 react-native cli 설치 명령어를 입력한다&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-10.png&quot; alt=&quot;img&quot; /&gt;
+명령어 : npm install -g react-native-cli&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-06.png&quot; alt=&quot;img&quot; /&gt;
+설치가 완료되면 React-native 프로젝트를 생성한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-07.png&quot; alt=&quot;img&quot; /&gt;
+명령어 : react-native run-android&lt;/p&gt;
+
+&lt;p&gt;프로젝트 생성이 완료되면 프로젝트가 있는 폴더로 이동 후 프로젝트를 실행한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\react-native-android\react-native-android-11.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;생성된 프로젝트의 App.js가 실행되는 것을 볼 수 있다&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="react-native" />
+      
+
+      
+        <summary type="html">react-native 환경설정</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">React Native Base</title>
+      <link href="https://simplehanlab.github.io/react-native-base" rel="alternate" type="text/html" title="React Native Base" />
+      <published>2020-03-06T03:35:00+00:00</published>
+      <updated>2020-03-06T03:35:00+00:00</updated>
+      <id>https://simplehanlab.github.io/react-native-base</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/react-native-base">&lt;h3 id=&quot;1-react-native-프로젝트에-nativebase-적용하기&quot;&gt;1. React native 프로젝트에 NativeBase 적용하기&lt;/h3&gt;
+
+&lt;p&gt;기본 사용 조건&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Visual Studio Code&lt;/li&gt;
+  &lt;li&gt;Android Studio&lt;/li&gt;
+  &lt;li&gt;node.js&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;프로젝트를 만들 때는 expo를 사용하는 방법, native-cli를 사용하는 방법 2가지가 있다.
+이번 글에서는 native-cli를 사용한 방법을 설명한다.&lt;/p&gt;
+
+&lt;p&gt;react-native cli 설치&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cli&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;프로젝트 생성&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project_name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;프로젝트 동작&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project_name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//생성한 프로젝트 폴더로 이동&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ios&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ios 일 때&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// android 일 때&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\react\baseinstallok.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 완료되면 위와 같은 메시지가 표시된다.&lt;/p&gt;
+
+&lt;p&gt;NativeBase 사용&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ButtonExample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Click&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Me&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;기본&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;사용방식은&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;안에&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;넣어&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;사용한다&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자세한 사용방법은 아래 공식 홈페이지에 설명되어 있다.
+https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
+
+&lt;p&gt;개발환경 설정에 유용한 라이브러리&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;React-Native        프로젝트 공식 사이트&lt;/li&gt;
+  &lt;li&gt;NativeBase          NativeBase UI 프레임워크 공식 사이트&lt;/li&gt;
+  &lt;li&gt;reactnavigation     react-native 페이지이동 라이브러리&lt;/li&gt;
+  &lt;li&gt;vector-icons        무료지원 아이콘 라이브러리&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="javascript" />
+      
+        <category term="react" />
+      
+        <category term="react-native" />
+      
+        <category term="node" />
+      
+        <category term="redux" />
+      
+        <category term="router" />
+      
+        <category term="code splitting" />
+      
+        <category term="server side rendering" />
+      
+
+      
+        <summary type="html">1. React native 프로젝트에 NativeBase 적용하기</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

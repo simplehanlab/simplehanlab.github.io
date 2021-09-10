@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/restapi/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T09:38:03+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/restapi/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">오픈뱅킹 서비스 API 통신 - 2 (사용자 인증)</title>
+      <link href="https://simplehanlab.github.io/openbank-api-2" rel="alternate" type="text/html" title="오픈뱅킹 서비스 API 통신 - 2 (사용자 인증)" />
+      <published>2020-02-28T18:00:00+00:00</published>
+      <updated>2020-02-28T18:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/openbank-api-2</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/openbank-api-2">&lt;h4 id=&quot;사용자-인증&quot;&gt;&lt;strong&gt;사용자 인증&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이전 포스트에서 간편 가입 이후 등록한 앱에서 확인한 앱키와 앱 시크릿 키를 통한 사용자 인증을 진행해 보도록 하겠다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자에 대한 이용기관의 자체 인증이 없다면 오픈뱅킹에서 제공하는 본인인증 절차를 통해 본인 확인 및 계좌 등록이 가능하다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;OAuth2 기반의 인증 절차로 이루어 지며 자체 인증이 없는 경우 3-legged 방식을 통해 오픈뱅킹에서 제공하는 화면을 통해 인증을 진행한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;REST API 를 통해 진행할 수 없으며 웹 또는 앱 어플리케이션에서 인증을 위한 주소를 호출하여 인증화면을 제공 받는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이번 테스트에서는 스프링부트 웹 프로젝트를 통해 사용자 인증을 받는 방식을 설명하도록 하겠다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;간단히 테스트를 위한 스프링 부트 웹 프로젝트를 생성한 뒤 JSP 내에서 윈도우 팝업 호출을 통한 인증 페이지를 호출한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;오픈뱅킹에서 제공하는 API 명세서 중 본인인증 요청 API 확인&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;URL : https://openapi.openbanking.or.kr/oauth/2.0/authorize&lt;/p&gt;
+
+&lt;p&gt;Method : GET&lt;/p&gt;
+
+&lt;p&gt;의 주소를 통한 JSP 내의 form 태그를 이용한 윈도우 팝업 호출&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;form 코드&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;authorizeFrm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;authorizeFrm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;get&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://testapi.openbanking.or.kr/oauth/2.0/authorize&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_authForm&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;client_id&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AyEoyDUkvMZznIdzL1pGdFxTL1rQR2q2OwdJYQMv&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;scope&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login inquiry transfer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redirect_uri&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://localhost:8082/bank/callback&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;auth_type&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;response_type&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;state&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12345678901234567890123456789012&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;client_id&lt;/strong&gt; : 앱 등록 후 발급받은 앱 키&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;scope&lt;/strong&gt; : Access Token 권한 범위 (다중 scope 가능)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;redirect_uri&lt;/strong&gt; : 마이페이지 &amp;gt; 내앱관리 &amp;gt; 추가정보 에서 사용자 인증 이후 redirect 될 uri 를 설정 후 해당 주소 사용&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;auth_type&lt;/strong&gt; :&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(0)최초인증&lt;/strong&gt; : 처음 오픈뱅킹에 접속하는 사용자의 인증 처리 (본인인증+조회/출금동의)&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;(1)재인증 : 최초 접속 이후에 추가로 계좌등록 필요시 인증 처리 (본인재인증+ARS동의) 선택항목을 파라미터로 받은 경우 인증화면 입력란에 자동으로 정보 셋팅&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(2)인증생략&lt;/strong&gt; : 유효한 접속토큰을 이용하여 본인인증 절차 생략 (본인인증생략+조회/출금동의) ARS로 조회/출금동의 시 휴대폰번호는 DB에 저장된 값을 활용 (전자금융업자 등 특정 자격요건을 갖춘 사업자에만 선별적으로 허용)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;response_type&lt;/strong&gt; : “code” 로 고정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;state&lt;/strong&gt; : CSRF 보안위협에 대응하기 위해 이용기관이 셋팅하는 난수값(32Byte 로 고정)&lt;/p&gt;
+
+&lt;p&gt;※ 각 파라미터에 대한 자세한 설명은 &lt;a href=&quot;\assets\images\openbank\post_2\api_list.pdf&quot;&gt;오픈뱅킹 서비스 API 목록&lt;/a&gt; (Ctrl + click 시 새탭으로 열기) 의 사용자 인증 에서 확인&lt;/p&gt;
+
+&lt;p&gt;위의 form 코드를 window.open 함수를 이용한 새창에서 호출 스크립트 코드&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Javascript 코드&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$authorizeFrm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#authorizeFrm&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;_authForm&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$authorizeFrm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;새창에서 해당 정보를 가지고 호출을 하면 다음과 같은 화면을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 각 인증절차에 따라 인증을 진행하면 파라미터로 설정한 redirect_uri 를 통해 Access Token을 발급 받기 위한 code(authorization_code) 를 리턴 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;※응답 형식&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_5.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;redirect_uri 로 설정된 경로에서 code 값을 추출&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_6.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;사용자-토큰-발급--3-legged&quot;&gt;**사용자 토큰 발급 ** (3-legged)&lt;/h4&gt;
+
+&lt;p&gt;**&lt;사용자 토큰=&quot;&quot; 발급=&quot;&quot; API=&quot;&quot; 설명서=&quot;&quot;&gt;**&lt;/사용자&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_2\openbank_2_7.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;추출한 code 값을 이용하여 토큰 발급 API 요청을 진행한다.&lt;/p&gt;
+
+&lt;p&gt;**&lt;서버 소스=&quot;&quot; 코드=&quot;&quot;&gt;**&lt;/서버&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authHeaders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reqParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;client_id&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clientId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;client_secret&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clientSecret&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;grant_type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;authorization_code&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redirect_uri&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redirectUri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;nc&quot;&gt;JSONObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttpUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;httpPost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://testapi.openbanking.or.kr/oauth/2.0/token&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accessToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;access_token&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refreshToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;refresh_token&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userSeqNo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user_seq_no&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;scope&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokenType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authRes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;token_type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="RestAPI" />
+      
+        <category term="openbanking" />
+      
+        <category term="오픈뱅킹" />
+      
+
+      
+        <summary type="html">사용자 인증</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">오픈뱅킹 서비스 API 통신 - 1</title>
+      <link href="https://simplehanlab.github.io/openbank-api-1" rel="alternate" type="text/html" title="오픈뱅킹 서비스 API 통신 - 1" />
+      <published>2020-02-28T18:00:00+00:00</published>
+      <updated>2020-02-28T18:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/openbank-api-1</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/openbank-api-1">&lt;h4 id=&quot;계정-생성테스트를-위한-간편가입&quot;&gt;&lt;strong&gt;계정 생성(테스트를 위한 간편가입)&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;오픈 뱅킹에서는 테스트 이용자를 위한 테스트베드 서비스를 제공한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.openbanking.or.kr/&quot;&gt;테스트 베드 웹 사이트&lt;/a&gt; https://developers.openbanking.or.kr/  접속&lt;/p&gt;
+
+&lt;p&gt;상단 메뉴 우측 간편가입을 통해 간편가입 진행&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_1\openbank_1_1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;앱-등록-및-앱-키-발급&quot;&gt;&lt;strong&gt;앱 등록 및 앱 키 발급&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;로그인 후 우측 마이페이지 &amp;gt; 내앱 선택 &amp;gt; 내앱 관리에서 앱 등록 후 앱키와 앱 시크릿 키를 발급 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_1\openbank_1_2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_1\openbank_1_3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 발급 받은 앱키와 앱 시크릿 키를 이용하여 사용자 인증시에 요청 파라미터에 사용&lt;/p&gt;
+
+&lt;h4 id=&quot;테스트-베드-api--콘솔&quot;&gt;&lt;strong&gt;테스트 베드 API  콘솔&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;테스트 베드에서 제공하는 API 콘솔을 이용하여 각 API 별로 요청 파라미터와 응답 데이터에 대한 간단한 API 테스트가 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\openbank\post_1\openbank_1_4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;API 의 구조 파악과 통신에 대한 간단한 테스트만 가능 할 뿐 테스트 베드에서 제공하는 테스트 데이터와는 무관한 데이터가 나온다.&lt;/p&gt;
+
+&lt;p&gt;다음 포스트에서 테스트 베드를 통해 제공받은 앱키와 앱 시크릿 키를 이용해 사용자 인증을 진행해보도록 하겠다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="RestAPI" />
+      
+        <category term="openbanking" />
+      
+        <category term="오픈뱅킹" />
+      
+
+      
+        <summary type="html">계정 생성(테스트를 위한 간편가입)</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

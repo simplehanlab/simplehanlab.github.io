@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/gradle/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T09:38:03+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/gradle/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Maven과 Gradle 차이</title>
+      <link href="https://simplehanlab.github.io/mavengradle" rel="alternate" type="text/html" title="Maven과 Gradle 차이" />
+      <published>2021-09-09T16:00:00+00:00</published>
+      <updated>2021-09-09T16:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/mavengradle</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/mavengradle">&lt;h1 id=&quot;빌드-도구란&quot;&gt;빌드 도구란?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;빌드 도구는 빌드 자동화를 시켜주는 실행가능한 프로그램만들어 주는 프로그램 ex) maven, gradle, ant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;빌드-자동화란&quot;&gt;빌드 자동화란?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;빌드 자동화의 본질적 목적은 소프트웨어 개발자가 반복해서 하는 코딩을 잘 짜여진 프로세스를 통해 자동으로 실행하여, 
+믿을 수 있는 결과물도 생산해 낼 수 있는 일련의 작업방식 및 방법을 말한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;지속적인 통합(continuous Integration)과도 일맥상통되는 의미다. 
+수없이 반복해서 최종 결과물을 만들어내야 하는 소프트웨어 개발업무에서 빠질 수 없는 개념적 이해가 되었다. 
+특히 오늘날의 복잡하고 광범위한 협업적 개발 과정에서는 과정과정에서 있을 수 있는 인간적 실수의 가능성을 최소한으로 줄여야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;출처 : Wikipedia&lt;/p&gt;
+
+&lt;h2 id=&quot;maven-이란&quot;&gt;Maven 이란?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Project object model (POM)개념의 기반으로 만들어져있으며 빌드 중인 프로젝트, 빌드 순서, 
+다양한 외부 라이브러리의 종속성 관계들을 pom.xml파일에 명시한다.&lt;/li&gt;
+  &lt;li&gt;외부저장소에서 필요한 라이브러리와 플러그인들을 다운로드 한 다음, 로컬시스템의 캐시에 모두 저장한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;project-object-model-pom&quot;&gt;Project Object Model (POM)&lt;/h3&gt;
+&lt;p&gt;Project Object Model는 이름 그대로 Project Object Model의 정보를 담고있는 파일이다. &lt;br /&gt;
+이 파일에서 주요하게 다루는 기능들은 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로젝트 정보 : 프로젝트의 이름, 개발자 목록, 라이센스 등&lt;/li&gt;
+  &lt;li&gt;빌드 설정 : 소스, 리소스, 라이프 사이클별 실행한 플러그인(goal)등 빌드와 관련된 설정&lt;/li&gt;
+  &lt;li&gt;빌드 환경 : 사용자 환경 별로 달라질 수 있는 프로파일 정보&lt;/li&gt;
+  &lt;li&gt;POM연관 정보 : 의존 프로젝트(모듈), 상위 프로젝트, 포함하고 있는 하위 모듈 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gradle-이란&quot;&gt;Gradle 이란?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Maven과 Ant에서 볼수 있는 개념들을 사용하는 대안으로써 나온 프로젝트 빌드 관리 툴이다.&lt;/li&gt;
+  &lt;li&gt;Ant처럼 유연한 범용 빌드 도구&lt;/li&gt;
+  &lt;li&gt;Maven을 사용할 수 있는 변환 가능 컨벤션 프레임 워크&lt;/li&gt;
+  &lt;li&gt;Groovy 언어를 사용한 Domain-specific-language를 사용한다. 
+(설정파일을 xml파일을 사용하는 Maven보다 코드가 훨씬 간결하다.)&lt;/li&gt;
+  &lt;li&gt;2007년에 처음 개발되었고, 2013년에 구글에 의해 안드로이드 프로젝트의 빌드 시스템으로 채택되었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;maven-gradle-차이&quot;&gt;Maven Gradle 차이&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Maven은 고정적이고 선형적인 단계의 모델을 기반&lt;br /&gt;
+Gradle은 작업 의존성 그래프를 기반&lt;/li&gt;
+  &lt;li&gt;Maven, Gradle 둘 다 다중 모듈 빌드를 병렬로 실행할 수 있지만&lt;br /&gt;
+Gradle은 어떤 task가 업데이트 되었고 안되었는지를 체크하기 때문에 incremental build를 허용한다.&lt;br /&gt;
+이미 업데이트된 task에 대해서는 작업이 실행 되지 않으므로 빌드 시간이 훨씬 단축된다.&lt;/li&gt;
+  &lt;li&gt;Maven은 멀티 프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 상속을 받아야하지&lt;br /&gt;
+Gradle은 설정 주입 방식을 제공한다.&lt;/li&gt;
+  &lt;li&gt;Gradle은 concurrent에 안전한 캐시를 허용한다.&lt;br /&gt;
+2개 이상의 프로젝트에서 동일한 캐시를 사용할 경우,   &lt;br /&gt;
+서로 overwrite되지 않도록 checksum기반의 캐시를 사용하고 캐시를 repository와 동기화시킬 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;maven-코드-예제&quot;&gt;Maven 코드 예제&lt;/h2&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;project&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://maven.apache.org/POM/4.0.0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;modelVersion&amp;gt;&lt;/span&gt;4.0.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/modelVersion&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.example&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;demo-maven&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.0.1-SNAPSHOT&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;packaging&amp;gt;&lt;/span&gt;jar&lt;span class=&quot;nt&quot;&gt;&amp;lt;/packaging&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;demo-maven&lt;span class=&quot;nt&quot;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;Demo project for Spring Boot&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;parent&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-starter-parent&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.5.4.RELEASE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;relativePath/&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- lookup parent from repository --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/parent&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;project.build.sourceEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/project.build.sourceEncoding&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;project.reporting.outputEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/project.reporting.outputEncoding&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;java.version&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/java.version&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
+    
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-starter&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+    
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-starter-test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;build&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;plugins&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-boot-maven-plugin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugins&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/build&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/project&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;gradle-코드-예제&quot;&gt;Gradle 코드 예제&lt;/h2&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;buildscript&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;springBootVersion&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1.5.4.RELEASE&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;nx&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;avenCentral&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;classpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;idea&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;org.springframework.boot&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;0.0.1-SNAPSHOT&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sourceCompatibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.8&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mavenCentral&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;nx&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;org.springframework.boot:spring-boot-starter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;testCompile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;org.springframework.boot:spring-boot-starter-test&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="maven" />
+      
+        <category term="gradle" />
+      
+
+      
+        <summary type="html">빌드 도구란?</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

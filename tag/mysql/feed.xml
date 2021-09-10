@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/mysql/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T09:38:03+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/mysql/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">MySQL 사용자 추가, 권한부여</title>
+      <link href="https://simplehanlab.github.io/mysql-auth" rel="alternate" type="text/html" title="MySQL 사용자 추가, 권한부여" />
+      <published>2020-07-13T16:47:00+00:00</published>
+      <updated>2020-07-13T16:47:00+00:00</updated>
+      <id>https://simplehanlab.github.io/mysql-auth</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/mysql-auth">&lt;h1 id=&quot;mysql-권한&quot;&gt;MySQL 권한&lt;/h1&gt;
+
+&lt;h2 id=&quot;mysql-사용자-추가&quot;&gt;MySQL 사용자 추가&lt;/h2&gt;
+
+&lt;p&gt;사용자 계정을 추가 하기 전에 현재 생성된 사용자 계정을 확인하기 위해서는&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use mysql;
+select host, user from user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;쿼리를 통해서 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;그 후, 사용자를 추가하고자 한다면&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;create user '사용자 ID';
+create user '사용자아이디'@localhost identified by '비밀번호'; //로컬호스트에서만 접속가능
+create user '사용자아이디'@'%' identified by '비밀번호'; //외부에서도 접속가능
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이런식으로 생성이 가능 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;mysql-사용자-db-권한-부여및-제거&quot;&gt;MySQL 사용자 DB 권한 부여및 제거&lt;/h2&gt;
+
+&lt;p&gt;MySQL에서 사용자 계정의 권한을 추가하거나 제거할 때에는 GRANT와 REVOKE 명령으로 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;현재 사용자에게 허가된 권한을 보기 위해서는&lt;/p&gt;
+
+&lt;p&gt;SHOW GRANTS 를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;권한부여를 하면서 비밀번호 변경까지 하려면 IDENTIFIED BY ‘비밀번호’; 를 통해 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;이러한 방식으로 권한을 부여하는 쿼리는 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON DB명.테이블 TO '사용자아이디'@호스트 IDENTIFIED BY '비밀번호'; //모든 권한
+
+GRANT select, insert, update PRIVILEGES ON DB명.테이블 TO '사용자아이디'@호스트 IDENTIFIED BY '비밀번호'; //select, insert, update 권한
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;DB명과 테이블에 *을 주면 모든 DB의 테이블에 전역권한을 부여 할 수 있으나 권장되지는 않습니다.&lt;/p&gt;
+
+&lt;p&gt;비밀번호 변경을 원치 않는다면 IDENTIFIED BY ‘비밀번호’; 를 제거합니다.&lt;/p&gt;
+
+&lt;p&gt;이러한 작업을 마친후 반영을 위해&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;flush privileges;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;명령어를 통해 메모리에 반영하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;반대로 권한을 제거하고자 한다면,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;revoke all on DB명.테이블명 from '사용자아이디'; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;쿼리를 통해 가능합니다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="MySQL" />
+      
+
+      
+        <summary type="html">MySQL 권한</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">MySQL 설치</title>
+      <link href="https://simplehanlab.github.io/mysql-install" rel="alternate" type="text/html" title="MySQL 설치" />
+      <published>2020-06-04T16:37:00+00:00</published>
+      <updated>2020-06-04T16:37:00+00:00</updated>
+      <id>https://simplehanlab.github.io/mysql-install</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/mysql-install">&lt;p&gt;MySQL 설치방법&lt;/p&gt;
+
+&lt;h2 id=&quot;mysql-다운받기&quot;&gt;MySQL 다운받기&lt;/h2&gt;
+
+&lt;p&gt;※ MySQL 사이트에서 다운로드 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.mysql.com/&quot;&gt;http://www.mysql.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download01.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DOWNLOADS 탭 하단부 MySQL Community (GPL) Downloads&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download02.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MySQL Installer for Windows&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download03.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래쪽 Download 눌러서 진행&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download04.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;바로 설치를 진행한다&lt;/p&gt;
+
+&lt;h2 id=&quot;mysql-설치하기&quot;&gt;MySQL 설치하기&lt;/h2&gt;
+
+&lt;p&gt;※ 설치 전 필요에 맞게 설정 후 설치를 진행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download05.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 설치타입을 설정한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download06.png&quot; alt=&quot;img&quot; /&gt;
+두번째 ‘Check Requirements’ 에서 MySQL 을 설치할 때 추가로 설치할 프로그램을 선택한다&lt;/p&gt;
+
+&lt;p&gt;‘Execute’ 를 누르면 자동으로 설치한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download07.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘Execute’ 을 누르면 위에서 설치한 프로그램들을 인스톨 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download08.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘Accounts and Roles’ 에서 ‘Root’ 계정의 비밀번호를 설정한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download09.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서비스 항목에 저장될 이름을 지정한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download10.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘Execute’ 을 눌르면 서비스 등록 및 MySQL서버 시작 등 항목을 차례대로 진행한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download11.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘Check’ 버튼을 눌러서 설치한 MySQL서버가 제대로 동작하는지 테스트 할 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download12.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치를 완료한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download13.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 과정이 이상없이 성공적으로 진행 되었다면 자동으로 ‘Shell’ 과 ‘MySQL Workbench’ 가 실행된다&lt;/p&gt;
+
+&lt;h2 id=&quot;mysql-한글utf8-설정하기&quot;&gt;MySQL 한글(UTF8) 설정하기&lt;/h2&gt;
+
+&lt;h4 id=&quot;데이터셋-설정-확인&quot;&gt;데이터셋 설정 확인&lt;/h4&gt;
+&lt;h4 id=&quot;1-mysql-workbench-확인&quot;&gt;[1. MySQL Workbench 확인]&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;‘Navigator’ 목록에서 ‘Status and System Variables’ 를 선택한다&lt;/li&gt;
+  &lt;li&gt;오른쪽탭(System Variables)을 선택하고 ‘character’ 를 검색한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download14.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같이 실행하면 현재 설정값을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;만약 설정값이 utf8이 아니라면 ‘my.ini’ 파일을 수정해야 한다
+(‘my.ini’ 파일 위치는 위의 결과값 맨 마지막 행의 dir 위치를 참고)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download15.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘my.ini’ 파일 안에 위 내용을 넣어주고 ‘MySQL’ 을 재시작한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download16.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 workbench로 확인하면 utf8로 설정된 것을 볼 수 있다&lt;/p&gt;
+
+&lt;h4 id=&quot;2-mysql-콘솔-확인&quot;&gt;[2. MySQL 콘솔 확인]&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download17.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MySQL 콘솔창에 ‘status’명령어를 입력하여 ‘characterset’ 을 확인&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\database\download18.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘show variables like ‘char%’;’ 명령어를 실행시켜 ‘characterset’ 관련된 변수를 출력하여 확인&lt;/p&gt;
+
+&lt;p&gt;이 경우에도 위와 같은 방법으로 my.ini 파일을 추가해주면 해결된다&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="MySQL" />
+      
+
+      
+        <summary type="html">MySQL 설치방법</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

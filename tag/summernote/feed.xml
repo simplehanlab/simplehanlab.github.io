@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/summernote/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T09:38:03+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/summernote/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Spring 프로젝트에 Summernote 적용하기</title>
+      <link href="https://simplehanlab.github.io/add-summernote" rel="alternate" type="text/html" title="Spring 프로젝트에 Summernote 적용하기" />
+      <published>2020-02-04T18:00:00+00:00</published>
+      <updated>2020-02-04T18:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/add-summernote</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/add-summernote">&lt;p&gt;이전에 작성한 Naver SmartEditor 포스트에 이어서 이번엔 다른 위지윅 에디터를 적용해보기로 했다. 이번에 적용해 볼 에디터는 &lt;strong&gt;Summernote&lt;/strong&gt;라는 에디터이다. bootstrap, jQuery 기반의 에디터여서 필자 기준으로는 SmartEditor보다 더 쉽게 사용을 할 수 있었다. SmartEditor에선 몇번 헤딩을 한 이미지 업로드도 Summernote에선 너무나도 쉽게 구현을 하였다.&lt;/p&gt;
+
+&lt;p&gt;이전에 진행한 Bootstrap을 적용한 Spring 프로젝트를 이용해서 진행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/spring/add-bootstrap&quot;&gt;Spring 프로젝트에 Bootstrap 적용하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;summernote-리소스-받기&quot;&gt;Summernote 리소스 받기&lt;/h2&gt;
+
+&lt;p&gt;일단 처음으로 &lt;a href=&quot;https://github.com/summernote/summernote/releases&quot;&gt;Summernote 다운로드 페이지&lt;/a&gt;에서 리소스를 다운받자. 필자는 zip 파일을 다운받았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-2.JPG&quot; alt=&quot;add-summernote-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다운받은 zip 파일의 압축을 푼 뒤, dist폴더 내부의 파일들을 src/resources/libs/summernote에 넣어주자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-3.JPG&quot; alt=&quot;add-summernote-3&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;코드-생성&quot;&gt;코드 생성&lt;/h2&gt;
+
+&lt;p&gt;다음으로 summernote용 controller와 view를 작성해보자. 먼저 &lt;em&gt;com.example.demo.summernote.controller&lt;/em&gt; 패키지를 만들고 &lt;em&gt;SummernoteController.java&lt;/em&gt; 파일을 만들자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-4.JPG&quot; alt=&quot;add-summernote-4&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.summernote.controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.stereotype.Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.web.bind.annotation.RequestMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@Controller&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SummernoteController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/summernote&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;summernote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;summernote&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그 다음 JSP 파일을 만들자. 이름은 controller에서 지정해준 것 처럼 summernote.jsp로 만들었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-5.JPG&quot; alt=&quot;add-summernote-5&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ page &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;language=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html; charset=EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; pageEncoding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ taglib &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prefix=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://java.sun.com/jsp/jstl/core&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;contextPath&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;c:url &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;c:url &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/libs/summernote/summernote.min.css'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;c:url &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/libs/jquery-3.4.1.min.js'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;c:url &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/libs/summernote/summernote.min.js'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;c:url &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/js/summernote/summernote.js'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+		
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Insert title here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;summernote&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hello Summernote&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;유심히 봐야할 부분이 있다. 그간 포스트 작성하며 사용해 온 bootstrap은 4버전인데, summernote는 bootstrap 3버전에서 운용해줘야 깔끔하게 돌아간다. 이에 bootstrap css와 js 부분을 CDN을 통해서 3.3.7 버전을 내려받아서 사용하였다. 만약 3.3.7을 따로 가지고 있는 사람들은 해당 리소스를 사용하면 될 것이다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 추가로 &lt;em&gt;src/resources/static/js/summernote/summernote.js&lt;/em&gt; 파일을 추가한 뒤 아래 코드를 작성하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#summernote&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;summernote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제 브라우저에서 http://localhost:8080/summernote로 접속하여 summernote 에디터가 잘 뜨는지 확인해보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-6.JPG&quot; alt=&quot;add-summernote-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;summernote는 이미지 업로드 시 해당 이미지를 base64로 변환한 뒤 바로 코드로 적용하도록 동작한다. 완전히 클라이언트 단에서 모든 작업이 이루어지게 되어 있는데, 이를 이대로 사용할 수도 있지만 서버에 작성한 HTML 코드를 전송했을 때 base64의 어마어마한 텍스트가 같이 전달된다. 이미지를 10개, 20개 추가한 뒤 서버로 보내게 되면 텍스트의 양은 어마어마해져서 이를 조금 수정하려고 한다.&lt;/p&gt;
+
+&lt;p&gt;작동 방식을 다음과 같이 바꿔봤다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;에디터에서 이미지 선택&lt;/li&gt;
+  &lt;li&gt;서버에 이미지를 전송하여 서버에 이미지 저장&lt;/li&gt;
+  &lt;li&gt;에디터 코드에서 img 태그를 사용하여 업로드 한 서버 이미지 호출&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;문제는 이렇게 코드를 적용시키면 추후에 이미지를 추가했다가 지워버리면 해당 이미지가 temp로 남아버리기 때문에 temp 파일 관리가 추가로 들어가줘야 한다.&lt;/p&gt;
+
+&lt;p&gt;일단은 위 로직부터 구현을 해보자.&lt;/p&gt;
+
+&lt;h2 id=&quot;파일-업로드--조회-로직-구현&quot;&gt;파일 업로드 &amp;amp; 조회 로직 구현&lt;/h2&gt;
+
+&lt;p&gt;위 로직을 구현하려면 파일 업로드와 파일 조회 로직을 구현해야 한다. 이건 추후 포스팅으로?&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Spring" />
+      
+        <category term="STS" />
+      
+        <category term="JSP" />
+      
+        <category term="Summernote" />
+      
+
+      
+        <summary type="html">이전에 작성한 Naver SmartEditor 포스트에 이어서 이번엔 다른 위지윅 에디터를 적용해보기로 했다. 이번에 적용해 볼 에디터는 Summernote라는 에디터이다. bootstrap, jQuery 기반의 에디터여서 필자 기준으로는 SmartEditor보다 더 쉽게 사용을 할 수 있었다. SmartEditor에선 몇번 헤딩을 한 이미지 업로드도 Summernote에선 너무나도 쉽게 구현을 하였다.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
