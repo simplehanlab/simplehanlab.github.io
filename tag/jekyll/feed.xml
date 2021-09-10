@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
-  <link href="http://localhost:4000/tag/jekyll/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-09-10T14:51:54+09:00</updated>
-  <id>http://localhost:4000/tag/jekyll/feed.xml</id>
+  <link href="https://simplehanlab.github.io/tag/jekyll/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-10T07:02:09+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/jekyll/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">jekyll test</title>
-      <link href="http://localhost:4000/jekyll-test" rel="alternate" type="text/html" title="jekyll test" />
-      <published>2020-09-09T10:10:00+09:00</published>
-      <updated>2020-09-09T10:10:00+09:00</updated>
-      <id>http://localhost:4000/jekyll-test</id>
-      <content type="html" xml:base="http://localhost:4000/jekyll-test">&lt;p&gt;이 글은 jekyll test 입니다.!!!&lt;/p&gt;</content>
+      <link href="https://simplehanlab.github.io/jekyll-test" rel="alternate" type="text/html" title="jekyll test" />
+      <published>2020-09-09T01:10:00+00:00</published>
+      <updated>2020-09-09T01:10:00+00:00</updated>
+      <id>https://simplehanlab.github.io/jekyll-test</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/jekyll-test">&lt;p&gt;이 글은 jekyll test 입니다.!!!&lt;/p&gt;</content>
 
       
       

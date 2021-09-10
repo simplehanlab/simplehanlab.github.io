@@ -4,7 +4,7 @@
     <title> - Articles</title>
     <description>기록 블로그</description>
     <link>
-    http://localhost:4000</link>
+    https://simplehanlab.github.io</link>
     
       
       <item>
@@ -18,10 +18,10 @@
 
 </description>
         
-        <pubDate>Wed, 08 Sep 2021 08:40:00 +0900</pubDate>
+        <pubDate>Tue, 07 Sep 2021 23:40:00 +0000</pubDate>
         <link>
-        http://localhost:4000/python-control-statement</link>
-        <guid isPermaLink="true">http://localhost:4000/python-control-statement</guid>
+        https://simplehanlab.github.io/python-control-statement</link>
+        <guid isPermaLink="true">https://simplehanlab.github.io/python-control-statement</guid>
       </item>
       
     
@@ -37,10 +37,10 @@
 
 </description>
         
-        <pubDate>Wed, 08 Sep 2021 08:40:00 +0900</pubDate>
+        <pubDate>Tue, 07 Sep 2021 23:40:00 +0000</pubDate>
         <link>
-        http://localhost:4000/python-base</link>
-        <guid isPermaLink="true">http://localhost:4000/python-base</guid>
+        https://simplehanlab.github.io/python-base</link>
+        <guid isPermaLink="true">https://simplehanlab.github.io/python-base</guid>
       </item>
       
     
@@ -51,10 +51,10 @@
           <description>&lt;p&gt;이 글은 jekyll test 입니다.!!!&lt;/p&gt;
 </description>
         
-        <pubDate>Wed, 09 Sep 2020 10:10:00 +0900</pubDate>
+        <pubDate>Wed, 09 Sep 2020 01:10:00 +0000</pubDate>
         <link>
-        http://localhost:4000/jekyll-test</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-test</guid>
+        https://simplehanlab.github.io/jekyll-test</link>
+        <guid isPermaLink="true">https://simplehanlab.github.io/jekyll-test</guid>
       </item>
       
     
@@ -66,10 +66,10 @@
 
 </description>
         
-        <pubDate>Thu, 19 Nov 1863 19:18:00 +0900</pubDate>
+        <pubDate>Thu, 19 Nov 1863 10:18:00 +0000</pubDate>
         <link>
-        http://localhost:4000/gettysburg-address</link>
-        <guid isPermaLink="true">http://localhost:4000/gettysburg-address</guid>
+        https://simplehanlab.github.io/gettysburg-address</link>
+        <guid isPermaLink="true">https://simplehanlab.github.io/gettysburg-address</guid>
       </item>
       
     
