@@ -55,7 +55,7 @@
     <meta property="og:title" content="Google Map API React에서 사용하기" />
     <meta property="og:description" content="1. 시작하기 지도를 사용해야하는 프로젝트가 있어서, 국내뿐아닌 해외도 보기 쉬운 지도 관련 API를 찾다보니 Google maps보다 더 좋은것을 찾기 힘들어 해당 API와 React를 같이 사용하여 작업해봤습니다. 저와 같은 분들을 위해 React로 Google Map API를 사용하는 방법을 작성 해 보겠습니다. 먼저 API를 사용하기 위해 KEY값이 필요하므로 Google Maps Plat form 사이트에" />
     <meta property="og:url" content="https://simplehanlab.github.io/google-map-react" />
-    <meta property="og:image" content="https://simplehanlab.github.io/assets/images/bus.jpg" />
+    <meta property="og:image" content="https://simplehanlab.github.io/assets/built/images/bus.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
     <meta property="article:published_time" content="2019-11-06T17:25:00+00:00" />
@@ -65,7 +65,7 @@
     <meta name="twitter:title" content="Google Map API React에서 사용하기" />
     <meta name="twitter:description" content="1. 시작하기 지도를 사용해야하는 프로젝트가 있어서, 국내뿐아닌 해외도 보기 쉬운 지도 관련 API를 찾다보니 Google maps보다 더 좋은것을 찾기 힘들어 해당 API와 React를 같이 사용하여 작업해봤습니다. 저와 같은 분들을 위해 React로 Google Map API를 사용하는 방법을 작성 해 보겠습니다. 먼저 API를 사용하기 위해 KEY값이 필요하므로 Google Maps Plat form 사이트에" />
     <meta name="twitter:url" content="https://simplehanlab.github.io/" />
-    <meta name="twitter:image" content="https://simplehanlab.github.io/assets/images/bus.jpg" />
+    <meta name="twitter:image" content="https://simplehanlab.github.io/assets/built/images/bus.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="SimpleHan Lab" />
     <meta name="twitter:label2" content="Filed under" />
@@ -87,7 +87,7 @@
     "url": "https://simplehanlab.github.io/google-map-react",
     "image": {
         "@type": "ImageObject",
-        "url": "https://simplehanlab.github.io/assets/images/bus.jpg",
+        "url": "https://simplehanlab.github.io/assets/built/images/bus.png",
         "width": 2000,
         "height": 666
     },
@@ -132,7 +132,6 @@ into the {body} of the default.hbs template -->
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/react/">react</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/spring/">spring</a></li>
@@ -142,9 +141,11 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/ssl/">ssl</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/tensorflow/">tensorflow</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/ssh/">ssh</a></li>
-    <li class="nav-python" role="menuitem"><a href="/tag/python/">python</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/categories.html">카테고리별 Posts</a>
     </li>
     <li class="nav-archive" role="menuitem">
         <a href="/author_archive.html">Tag별 Posts</a>
@@ -207,7 +208,7 @@ into the {body} of the default.hbs template -->
 
             <!--
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/bus.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/bus.png)">
             </figure>
             
             -->
@@ -248,10 +249,10 @@ into the {body} of the default.hbs template -->
 <p>그 후 터미널에 다음과 같이 입력하여</p>
 
 <p>React로 프로젝트를 생성후 Google Map API를 설치합니다.</p>
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  npm init react-app AppName
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm init react-app AppName
   npm install --save google-maps-react
   yarn install
-</span></code></pre></div></div>
+</code></pre></div></div>
 
 <p>그 후 컨테이너에서 google-maps-react를 import합니다.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nb">Map</span><span class="p">,</span> <span class="nx">GoogleApiWrapper</span><span class="p">,</span> <span class="nx">Marker</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">google-maps-react</span><span class="dl">'</span><span class="p">;</span>
@@ -944,7 +945,7 @@ into the {body} of the default.hbs template -->
     <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/google-map-react2">
-                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/built/images/bus.png)"></div>
             </a>
         
         <div class="post-card-content">
@@ -1014,7 +1015,7 @@ into the {body} of the default.hbs template -->
     <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/react2">
-                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/built/images/bus.png)"></div>
             </a>
         
         <div class="post-card-content">

@@ -55,7 +55,7 @@
     <meta property="og:title" content="JavaScript 프린트 제어" />
     <meta property="og:description" content="1. JavaScript Print javascript만을 사용하여 print기능을 제어하는 방법을 정리했습니다. 먼저 현재창에서 Class가 printWrap인 HTML 엘리먼트를 A4 크기로 설정 후, 프린트 하는 방법입니다. const _tempHTML = document.getElementsByClassName("printWrap")[0].innerHTML; window.onbeforeprint = function(){ document.body.innerHTML = "&lt;div class='printWrap' style='width:21cm; height: 29.7cm;'&gt;" + _tempHTML +"/div&gt;"; } window.onafterprint = function(){ //새로고침하여 페이지를 다시 출력합니다. this.window.location.reload(); } window.print();" />
     <meta property="og:url" content="https://simplehanlab.github.io/javascript-print" />
-    <meta property="og:image" content="https://simplehanlab.github.io/assets/images/bus.jpg" />
+    <meta property="og:image" content="https://simplehanlab.github.io/assets/built/images/bus.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
     <meta property="article:published_time" content="2020-02-25T11:56:00+00:00" />
@@ -65,7 +65,7 @@
     <meta name="twitter:title" content="JavaScript 프린트 제어" />
     <meta name="twitter:description" content="1. JavaScript Print javascript만을 사용하여 print기능을 제어하는 방법을 정리했습니다. 먼저 현재창에서 Class가 printWrap인 HTML 엘리먼트를 A4 크기로 설정 후, 프린트 하는 방법입니다. const _tempHTML = document.getElementsByClassName("printWrap")[0].innerHTML; window.onbeforeprint = function(){ document.body.innerHTML = "&lt;div class='printWrap' style='width:21cm; height: 29.7cm;'&gt;" + _tempHTML +"/div&gt;"; } window.onafterprint = function(){ //새로고침하여 페이지를 다시 출력합니다. this.window.location.reload(); } window.print();" />
     <meta name="twitter:url" content="https://simplehanlab.github.io/" />
-    <meta name="twitter:image" content="https://simplehanlab.github.io/assets/images/bus.jpg" />
+    <meta name="twitter:image" content="https://simplehanlab.github.io/assets/built/images/bus.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="SimpleHan Lab" />
     <meta name="twitter:label2" content="Filed under" />
@@ -87,7 +87,7 @@
     "url": "https://simplehanlab.github.io/javascript-print",
     "image": {
         "@type": "ImageObject",
-        "url": "https://simplehanlab.github.io/assets/images/bus.jpg",
+        "url": "https://simplehanlab.github.io/assets/built/images/bus.png",
         "width": 2000,
         "height": 666
     },
@@ -132,7 +132,6 @@ into the {body} of the default.hbs template -->
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/react/">react</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/spring/">spring</a></li>
@@ -142,9 +141,11 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/ssl/">ssl</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/tensorflow/">tensorflow</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/ssh/">ssh</a></li>
-    <li class="nav-python" role="menuitem"><a href="/tag/python/">python</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/categories.html">카테고리별 Posts</a>
     </li>
     <li class="nav-archive" role="menuitem">
         <a href="/author_archive.html">Tag별 Posts</a>
@@ -195,7 +196,7 @@ into the {body} of the default.hbs template -->
 
             <!--
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/bus.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/bus.png)">
             </figure>
             
             -->
@@ -501,7 +502,7 @@ into the {body} of the default.hbs template -->
     <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/openbank-api-1">
-                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/built/images/bus.png)"></div>
             </a>
         
         <div class="post-card-content">
@@ -563,7 +564,7 @@ into the {body} of the default.hbs template -->
     <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/jasper-2">
-                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/built/images/bus.png)"></div>
             </a>
         
         <div class="post-card-content">
