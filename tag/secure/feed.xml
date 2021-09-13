@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://simplehanlab.github.io/tag/secure/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-13T01:50:55+00:00</updated>
+  <id>https://simplehanlab.github.io/tag/secure/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">SimpleHan Lab | </title>
+  
+
+  
+    <subtitle>기록 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Nginx + Tomcat8 연동</title>
+      <link href="https://simplehanlab.github.io/ssl-nginx-tomcat" rel="alternate" type="text/html" title="Nginx + Tomcat8 연동" />
+      <published>2019-07-30T11:00:00+00:00</published>
+      <updated>2019-07-30T11:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/ssl-nginx-tomcat</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/ssl-nginx-tomcat">&lt;p&gt;지난 시간에는 nginx 에 let’s encrypt 를 이용하여 무료 SSL 인증서를 적용해 보았다. 이번 시간에는 SSL 인증서로 https 접속이 가능해진 nginx 에 톰캣을 연결해 보도록 할 것이다.&lt;/p&gt;
+
+&lt;p&gt;nginx 설치 방법은 &lt;a href=&quot;https://simplehanlab.github.io/ssl/ssl-letsencrypt/&quot;&gt;Letsencrypt + Nginx SSL인증서(HTTPS) 적용&lt;/a&gt; 포스팅에서 nginx 설치 부분을 참고&lt;/p&gt;
+
+&lt;h3 id=&quot;환경&quot;&gt;환경&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ubuntu 18.04&lt;/li&gt;
+  &lt;li&gt;apt-get 을 통해 설치한 Nginx&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nginx-와-tomcat-연동&quot;&gt;Nginx 와 Tomcat 연동&lt;/h2&gt;
+
+&lt;p&gt;(톰캣이 설치&amp;amp;실행 되어 있다는 가정 하에 진행)&lt;/p&gt;
+
+&lt;p&gt;Nginx 의 설정 파일을 수정 ( 여기서는 /etc/nginx/site-available/default 파일을 수정)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim /etc/nginx/site-available/default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;server 블록 상단에 톰캣 서버에 대한 경로를 지정해 준 뒤 server 블록 내부에 location 설정 부분 수정 - 80포트와 443 포트에 대해 톰캣으로 연결되도록 설정을 수정한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
+&lt;span class=&quot;c&quot;&gt;# 톰캣 위치를 지정&lt;/span&gt;
+upstream tomcat &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	ip_hash&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	server 127.0.0.1:8080&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 80 포트에 대한 설정 &lt;/span&gt;
+server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        listen 80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        listen &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::]:80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        root /var/www/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# Add index.php to the list if you are using PHP&lt;/span&gt;
+        index index.html index.htm index.nginx-debian.html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        server_name _&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        charset utf-8&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# First attempt to serve request as file, then&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# as directory, then fall back to displaying a 404.&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# try_files $uri $uri/ =404;  // css 가 로드되지 않을수 있으므로 주석처리&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# proxy 설정 추가&lt;/span&gt;
+                proxy_pass http://tomcat&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; //tomcat 서버 지정
+                proxy_set_header X-Real-IP &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+                proxy_set_header X-Forwarded-For &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                proxy_set_header Host &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ ... 중략
+ 
+ &lt;span class=&quot;c&quot;&gt;# 443 포트에 대한 설정&lt;/span&gt;
+ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        listen 443&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        listen &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::]:443&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        ssl on&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        server_name _&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        ssl_certificate /etc/letsencrypt/live/8e7dcf95.ngrok.io/fullchain.pem&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        ssl_certificate_key /etc/letsencrypt/live/8e7dcf95.ngrok.io/privkey.pem&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# First attempt to serve request as file, then&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# as directory, then fall back to displaying a 404.&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# try_files $uri $uri/ =404;  // css 가 로드되지 않을수 있으므로 주석처리&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# proxy 설정 추가&lt;/span&gt;
+                proxy_pass http://tomcat&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                proxy_set_header X-Real-IP &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                proxy_set_header X-Forwarded-For &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                proxy_set_header Host &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;default 파일 내 location 설정 안에&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;proxy_pass http://tomcat&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_set_header X-Real-IP &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_set_header X-Forwarded-For &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_set_header Host &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 구문을 추가하면 된다.&lt;/p&gt;
+
+&lt;p&gt;파일을 저장한 뒤 nginx service 재시작&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;service nginx restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;다시 서버 ip로 접속시에 기존 nginx 페이지가 아닌 톰캣 서버 index 페이지가 나타나는 것을 확인 할 수 있을 것이다. (http, https 둘다 접속시도 해보자)&lt;/p&gt;
+
+&lt;p&gt;http 접속&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\nginx-tomcat\nginx_tomcat_http.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;https 접속&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\nginx-tomcat\nginx_tomcat_https.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;※ 상단 바 주의 요함부분을 클릭해보면 인증서가 적용되어 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;서버 재시작후 웹 브라우저에서 접속을 실행하면 500번대 에러가 날 수 있다. 이럴땐 톰캣 서버가 활성화 되어 있는지 확인해 본 뒤 다시 접속을 해보자&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="https" />
+      
+        <category term="SSL" />
+      
+        <category term="letsencrypt" />
+      
+        <category term="secure" />
+      
+
+      
+        <summary type="html">지난 시간에는 nginx 에 let’s encrypt 를 이용하여 무료 SSL 인증서를 적용해 보았다. 이번 시간에는 SSL 인증서로 https 접속이 가능해진 nginx 에 톰캣을 연결해 보도록 할 것이다.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/author/Simplehan/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/author/Simplehan/feed.xml</id>
 
   
@@ -804,21 +804,21 @@ Use MinTTY(the default terminal of MSYS2) – Git bash 기본 터미널 사용&l
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum list installed | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;policycoreutils-python
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144623259.png&quot; alt=&quot;image-20210113144623259&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144623259.png&quot; alt=&quot;image-20210113144623259&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;2-openssh-server&quot;&gt;2. openssh-server&lt;/h6&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum list installed | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;openssh-server
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144640124.png&quot; alt=&quot;image-20210113144640124&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144640124.png&quot; alt=&quot;image-20210113144640124&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;3--openssh-server-구동-여부-확인&quot;&gt;3.  openssh-server 구동 여부 확인&lt;/h6&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;systemctl status sshd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144737316.png&quot; alt=&quot;image-20210113144737316&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144737316.png&quot; alt=&quot;image-20210113144737316&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;4-메일링-서비스를-위한-postfix-설치필요시&quot;&gt;4. 메일링 서비스를 위한 postfix 설치(필요시)&lt;/h6&gt;
 
@@ -901,29 +901,29 @@ Use MinTTY(the default terminal of MSYS2) – Git bash 기본 터미널 사용&l
 
 &lt;p&gt;• &lt;a href=&quot;http://autoset.net/xe/download_autoset_10_7_2&quot;&gt;AutoSet&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;운영체제 시스템에 따라 알맞게 다운로드 합니다.&lt;/p&gt;
 
 &lt;p&gt;다른 아파치서버나 mysql 서버와 충돌이 날 수 있으므로 종료 후 설치를 진행합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b5.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b5.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;설치가 완료 된 후 오토셋을 실행시 다음과 같은 화면이 나옵니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b6.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b6.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;기본으로는 웹 서버와 mysql 시작이라고 나올것인데 시작해주시면 됩니다.&lt;/p&gt;
 
 &lt;p&gt;그후 제어탭을 눌러 phpMyAdmin에 접속합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b7.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b7.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;초기화면에서 기본값으로 로그인 할 경우&lt;/p&gt;
 
@@ -932,39 +932,39 @@ Use MinTTY(the default terminal of MSYS2) – Git bash 기본 터미널 사용&l
 패스워드 : autoset 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b8.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b8.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;다음과 같은 화면이 나오는데,&lt;/p&gt;
 
 &lt;p&gt;해당화면에서 데이터베이스에 들어가 wordpress에서 사용될 DB를 생성합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b9.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b9.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그리고 워드프레스 최신버전을 설치해줍니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://ko.wordpress.org/download/&quot;&gt;워드프레스 다운로드&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b10.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b10.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;압축파일을 오토셋의 public_html 폴더에 해제해줍니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b11.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b11.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 localhost/wordpress 에 접속하여 워드프레스 환경설정을 해줍니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b12.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b12.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b13.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b13.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b14.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b14.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;또한 설치형은 플러그인을 무료로 사용 가능합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b15.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b15.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b16.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b16.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\b17.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\b17.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이러한 식으로 플러그인을 찾아 추가해 사용 할 수 있습니다.&lt;/p&gt;</content>
 
@@ -1010,33 +1010,33 @@ Use MinTTY(the default terminal of MSYS2) – Git bash 기본 터미널 사용&l
 
 &lt;p&gt;과정의 이미지는 다음과 같습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a4.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이러한 과정을 거쳐 최종적으로 무료로 시작을 눌러 완료 할 수 있습니다. (유료 호스팅시 결제를 통해 완료도 가능합니다.)&lt;/p&gt;
 
 &lt;p&gt;또한 워드프레스는 사이트 설정시 테마를 선택하여 좀 더 편리하게 사이트를 생성 할 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a5.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a5.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후, 추가적인 수정은 사용자 정의하기 탭에서 가능합니다.&lt;/p&gt;
 
 &lt;p&gt;플러그인은 유료결제시에만 이용이 가능한 것으로 보입니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a6.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a6.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;추가적인 커스터마이징시 위젯에서 html태그를 생성해 임의로 추가하여 사용 할 수도 있습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a7.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a7.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그리고 사이트에서 사용되는 이미지의 관리는 미디어 라이브러리를 통해 가능합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\wordpress\a8.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\wordpress\a8.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
 
       
       

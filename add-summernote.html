@@ -220,17 +220,17 @@ into the {body} of the default.hbs template -->
 
 <p>일단 처음으로 <a href="https://github.com/summernote/summernote/releases">Summernote 다운로드 페이지</a>에서 리소스를 다운받자. 필자는 zip 파일을 다운받았다.</p>
 
-<p><img src="\assets\images\add-summernote\add-summernote-2.JPG" alt="add-summernote-2" /></p>
+<p><img src="\assets\built\images\add-summernote\add-summernote-2.JPG" alt="add-summernote-2" /></p>
 
 <p>다운받은 zip 파일의 압축을 푼 뒤, dist폴더 내부의 파일들을 src/resources/libs/summernote에 넣어주자.</p>
 
-<p><img src="\assets\images\add-summernote\add-summernote-3.JPG" alt="add-summernote-3" /></p>
+<p><img src="\assets\built\images\add-summernote\add-summernote-3.JPG" alt="add-summernote-3" /></p>
 
 <h2 id="코드-생성">코드 생성</h2>
 
 <p>다음으로 summernote용 controller와 view를 작성해보자. 먼저 <em>com.example.demo.summernote.controller</em> 패키지를 만들고 <em>SummernoteController.java</em> 파일을 만들자.</p>
 
-<p><img src="\assets\images\add-summernote\add-summernote-4.JPG" alt="add-summernote-4" /></p>
+<p><img src="\assets\built\images\add-summernote\add-summernote-4.JPG" alt="add-summernote-4" /></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.example.demo.summernote.controller</span><span class="o">;</span>
 
@@ -248,7 +248,7 @@ into the {body} of the default.hbs template -->
 
 <p>그 다음 JSP 파일을 만들자. 이름은 controller에서 지정해준 것 처럼 summernote.jsp로 만들었다.</p>
 
-<p><img src="\assets\images\add-summernote\add-summernote-5.JPG" alt="add-summernote-5" /></p>
+<p><img src="\assets\built\images\add-summernote\add-summernote-5.JPG" alt="add-summernote-5" /></p>
 
 <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=EUC-KR"</span><span class="na"> pageEncoding=</span><span class="s">"EUC-KR"</span><span class="nt">%&gt;</span>
 <span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="nt">%&gt;</span>
@@ -285,7 +285,7 @@ into the {body} of the default.hbs template -->
 
 <p>이제 브라우저에서 http://localhost:8080/summernote로 접속하여 summernote 에디터가 잘 뜨는지 확인해보자.</p>
 
-<p><img src="\assets\images\add-summernote\add-summernote-6.JPG" alt="add-summernote-6" /></p>
+<p><img src="\assets\built\images\add-summernote\add-summernote-6.JPG" alt="add-summernote-6" /></p>
 
 <p>summernote는 이미지 업로드 시 해당 이미지를 base64로 변환한 뒤 바로 코드로 적용하도록 동작한다. 완전히 클라이언트 단에서 모든 작업이 이루어지게 되어 있는데, 이를 이대로 사용할 수도 있지만 서버에 작성한 HTML 코드를 전송했을 때 base64의 어마어마한 텍스트가 같이 전달된다. 이미지를 10개, 20개 추가한 뒤 서버로 보내게 되면 텍스트의 양은 어마어마해져서 이를 조금 수정하려고 한다.</p>
 
@@ -516,6 +516,22 @@ into the {body} of the default.hbs template -->
                                         
                                         
                                     
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
                                   
                                 
                                   

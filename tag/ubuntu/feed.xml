@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/ubuntu/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/ubuntu/feed.xml</id>
 
   
@@ -55,7 +55,7 @@
 
 &lt;p&gt;Openjdk 경로/jre/lib/security 경로의 폴더를 보게 되면 cacerts 라는 파일이 있다. 리눅스 명령어 ls-l 을 통해 내용을 확인해 보면&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;D:\Node.js\workspace\simplehanlab.github.io\assets\images\openjdk-cacerts\cacerts_info.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;D:\Node.js\workspace\simplehanlab.github.io\assets\built\images\openjdk-cacerts\cacerts_info.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;※현재 cacerts 교체를 한 상태로 기존 cacerts 파일은 cacerts_bak 이다.&lt;/p&gt;
 
@@ -106,6 +106,88 @@
 
       
         <summary type="html">Oracle에서 JDK 유료화를 진행하려 함에 따라 open jdk 의 활용이 높아지고 있다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">[Ubuntu 18.04] SSH 접속 설정 하기</title>
+      <link href="https://simplehanlab.github.io/ssh-how_to_setup_ssh" rel="alternate" type="text/html" title="[Ubuntu 18.04] SSH 접속 설정 하기" />
+      <published>2019-08-07T15:00:00+00:00</published>
+      <updated>2019-08-07T15:00:00+00:00</updated>
+      <id>https://simplehanlab.github.io/ssh-how_to_setup_ssh</id>
+      <content type="html" xml:base="https://simplehanlab.github.io/ssh-how_to_setup_ssh">&lt;h2 id=&quot;ssh-란&quot;&gt;SSH 란?&lt;/h2&gt;
+
+&lt;p&gt;SSH (Secure Shell Protocol) 이란 네트워크 프로토콜중 하나로, 컴퓨터와 컴퓨터가 Public Network를 통해 서로 통신(연결)을 할때 보안적으로 안전하게 사용하기 위한 프로토콜&lt;/p&gt;
+
+&lt;h2 id=&quot;ubuntu-1804-에-ssh-적용하기&quot;&gt;Ubuntu 18.04 에 SSH 적용하기&lt;/h2&gt;
+
+&lt;h4 id=&quot;1-openssh-server-설치-유무-확인&quot;&gt;1. openssh-server 설치 유무 확인&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dpkg &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;openssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\dpkg-openssh.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;※ 우분투를 설치하시게 되면 기본적으로 openssh-client 는 설치가 되어있을 것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2openssh-server-설치&quot;&gt;2.openssh-server 설치&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;openssh-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\install-openssh-server.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-openssh-server-설치-확인&quot;&gt;3. openssh-server 설치 확인&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dpkg &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;openssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\check-install-openssh.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3putty-로-ssh-접속-확인하기&quot;&gt;3.Putty 로 ssh 접속 확인하기&lt;/h4&gt;
+
+&lt;h5 id=&quot;--server-ip-address-확인&quot;&gt;- server ip address 확인&lt;/h5&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ifconfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\check-ipadress.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;--putty-접속-확인&quot;&gt;- Putty 접속 확인&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\putty.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우분투 설치시 설정한 계정과 비밀번호를 입력 하면 로그인이 되는 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\ssh-how_to_setup_ssh\connect.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Simplehan</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="ssh" />
+      
+        <category term="ubuntu" />
+      
+        <category term="linux" />
+      
+
+      
+        <summary type="html">SSH 란?</summary>
       
 
       

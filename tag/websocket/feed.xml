@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/websocket/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/websocket/feed.xml</id>
 
   
@@ -83,7 +83,7 @@
 
 &lt;p&gt;그 다음 두가지 객체를 만들어 준다. 하나는 HelloMessage.java 파일로 클라이언트에서 입력한 이름을 받는 객체이다. 나머지 하나는 Greeting.java 파일로 받은 이름과 같이 클라이언트쪽으로 응답할 때 사용하는 객체이다. 일단 com.example.demo.websocket.vo 패키지를 만든 뒤 아래 코드와 같이 객체를 추가해주자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-1.JPG&quot; alt=&quot;add-websocket-1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-1.JPG&quot; alt=&quot;add-websocket-1&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.websocket.vo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
@@ -127,7 +127,7 @@
 
 &lt;p&gt;그 다음 com.example.demo.websocket.web 패키지를 만든 뒤 GreetingController.java 파일을 추가하자. 코드는 아래와 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-2.JPG&quot; alt=&quot;add-websocket-2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-2.JPG&quot; alt=&quot;add-websocket-2&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.websocket.web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
@@ -157,7 +157,7 @@
 
 &lt;p&gt;이제 JSP에서 테스트 코드를 작성하기 전에, WebSocket 설정 파일을 작성하자. com.example.demo.config 패키지를 만들고 WebSocketConfig.java 파일을 작성하자. 코드는 아래와 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-3.JPG&quot; alt=&quot;add-websocket-3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-3.JPG&quot; alt=&quot;add-websocket-3&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
@@ -187,7 +187,7 @@
 
 &lt;p&gt;이제 JSP 파일을 추가해보자. JSP 파일은 src/main/webapp/WEB-INF/jsp 폴더 안에 websocket.jsp로 만들고 코드는 아래와 같이 작성했다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-4.JPG&quot; alt=&quot;add-websocket-4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-4.JPG&quot; alt=&quot;add-websocket-4&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ page &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;language=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html; charset=EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; pageEncoding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ taglib &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prefix=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://java.sun.com/jsp/jstl/core&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
@@ -249,11 +249,11 @@
 
 &lt;p&gt;브라우저에서 키보드의 &lt;strong&gt;F12&lt;/strong&gt;키를 눌러서 개발자 도구를 연 뒤 &lt;strong&gt;Network&lt;/strong&gt;탭을 클릭하자. 그 후 브라우저를 새로고침한 뒤 sockjs 모듈과 stomp 모듈이 제대로 호출되는지 확인해보자. webjars를 이용하여 라이브러리를 직접 추가해주지 않아도 호출되는 모습을 확인할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-5.JPG&quot; alt=&quot;add-websocket-5&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-5.JPG&quot; alt=&quot;add-websocket-5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;마지막으로 websocket.js 파일을 추가해주려 한다. src/resources/static/js/websocket 폴더 내에 websocket.js 파일을 추가해주자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-6.JPG&quot; alt=&quot;add-websocket-6&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-6.JPG&quot; alt=&quot;add-websocket-6&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 다음 아래 코드를 입력하자.&lt;/p&gt;
 
@@ -328,15 +328,15 @@
 
 &lt;p&gt;이제 브라우저를 새로고침하여 개발자도구 콘솔에서 에러가 없는지 확인 후, &lt;strong&gt;Connect&lt;/strong&gt; 버튼을 눌러보자. Connect 버튼을 누른 뒤에 개발자 도구의 콘솔에 아래 이미지와 같이 나타나면 성공이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-7.JPG&quot; alt=&quot;add-websocket-7&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-7.JPG&quot; alt=&quot;add-websocket-7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이제 Connected 상태에서 오른쪽 &lt;strong&gt;What is your name?&lt;/strong&gt;이라 써있는 간단한 폼에 글자를 입력한 뒤 &lt;strong&gt;Send&lt;/strong&gt;버튼을 클릭해보자. 정상작동됬다면 아래 이미지처럼 뜰 것이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-8.JPG&quot; alt=&quot;add-websocket-8&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-8.JPG&quot; alt=&quot;add-websocket-8&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;마지막으로 &lt;strong&gt;Disconnect&lt;/strong&gt; 버튼을 클릭하여 연결을 끊어보자. 이 역시 정상작동하면 아래 이미지처럼 나올 것이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-9.JPG&quot; alt=&quot;add-websocket-9&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-9.JPG&quot; alt=&quot;add-websocket-9&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;java에서-어노테이션-외에-코드상으로-websocket-사용하기&quot;&gt;JAVA에서 어노테이션 외에 코드상으로 WebSocket 사용하기&lt;/h2&gt;
 
@@ -348,7 +348,7 @@
 
 &lt;p&gt;일단 com.example.demo.websocket.service 패키지를 만든 뒤 WebSocketService.java 파일을 만들자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-websocket\add-websocket-10.JPG&quot; alt=&quot;add-websocket-10&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-websocket\add-websocket-10.JPG&quot; alt=&quot;add-websocket-10&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;코드는 아래처럼 추가해주자.&lt;/p&gt;
 

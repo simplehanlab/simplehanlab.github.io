@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/react/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/react/feed.xml</id>
 
   
@@ -65,7 +65,7 @@
 &lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// android 일 때&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react\baseinstallok.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react\baseinstallok.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;설치가 완료되면 위와 같은 메시지가 표시된다.&lt;/p&gt;
 
@@ -157,7 +157,7 @@ https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
 
 &lt;p&gt;안트로이드 어플리케이션 프로젝트의 구조는 크게 4가지로 나눌 수 있다.
   &lt;!-- 안드로이드스튜디오 프로젝트 좌측 부분 스크린샷 넣을 것. --&gt;
-  &lt;img src=&quot;\assets\images\android\basic_structure.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\android\basic_structure.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. manifests - 'AndroidManifest.xml' 안드로이드의 컨트롤 타워라고 할 수 있다. 어플리케이션을 구동하는데 필요한 설정값을 관리해주는 곳이다.
 2. java - 클래스를 관리하는 폴더이다.
@@ -167,7 +167,7 @@ https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
 
 &lt;p&gt;a. AndroidManifest.xml
   &lt;!-- 매니페스트 스크린샷. --&gt;
-  &lt;img src=&quot;\assets\images\android\androidmanifest.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\android\androidmanifest.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;어플리케이션이 구동하는데 필요한 요소를 ‘AndroidManifest’에서 추가, 설정하고
   어플리케이션과 장치간에 상호작용하기 위해 필요한 권한 등을 설정한다.&lt;/p&gt;
@@ -178,7 +178,7 @@ https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
 
 &lt;p&gt;b. java 패키지
   &lt;!-- activity 스크린샷. --&gt;
-  &lt;img src=&quot;\assets\images\android\MainActivity.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\android\MainActivity.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;‘안드로이드를 프로그래밍한다.’ 라고 말하는 부분은 이곳을 수정한다는 얘기와 다르지 않다.
   어플리케이션이 작동하는 방식에 대해 정의하는 java 파일은 모두 이곳에 작성한다.&lt;/p&gt;
@@ -188,7 +188,7 @@ https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
 
 &lt;p&gt;c. activity_main.xml
   &lt;!-- activity_main.xml 스크린샷 --&gt;
-  &lt;img src=&quot;\assets\images\android\activity_main.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\android\activity_main.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;연결된 Activity 에서 작성한 코드가 어떻게 보여지는지 이곳에서 수정한다.
   이곳이 사용자가 보게 될 UI 화면이다.&lt;/p&gt;
@@ -204,7 +204,7 @@ https://docs.nativebase.io/Components.html#button-def-headref&lt;/p&gt;
 &lt;p&gt;어플리케이션에서 사용자가 ‘Activity’를 동작시키고 다음 ‘Activity’로 이동할 때까지
   이전 ‘Activity’의 처음 생성부터 종료될 때까지 어떻게 동작하는지를 말한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\android\lifecycle.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\android\lifecycle.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위 이미지를 순서대로 설명하면 아래와 같다.&lt;/p&gt;
 &lt;ol&gt;
@@ -747,7 +747,7 @@ NoSQL에서는 다른 구조의 데이터를 같은 컬렉션(=SQL에서 테이�
 
 &lt;p&gt;결과&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react\splitting.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react\splitting.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;App 컴포넌트에 버튼 하나를 만들고 위의 컴포넌트를 호출하도록 해보자
 버튼을 누르면 비동기적으로 SplitMe를 불러와서 state 에 담는다
@@ -910,7 +910,7 @@ NoSQL에서는 다른 구조의 데이터를 같은 컬렉션(=SQL에서 테이�
 &lt;p&gt;리덕스 미들웨어(middleware)는 액션을 디스패치했을 때 리듀서에서 이를 처리하기 전에 
   사전에 지정된 작업들을 실행한다. 미들웨어는 액션과 리듀서 사이의 중간자라고 볼 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react\middleware.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react\middleware.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-redux-middleware를-사용하는-이유&quot;&gt;2. Redux-middleware를 사용하는 이유&lt;/h3&gt;
 
@@ -1081,7 +1081,7 @@ NoSQL에서는 다른 구조의 데이터를 같은 컬렉션(=SQL에서 테이�
   이를 사용하면 컴포넌트가 많은 복잡한 형태의 프로젝트에서 상태값에 연관된 모든 컴포넌트들을
   업데이트 하고 리렌더링 할 필요 없이 바로 전달할 수 있게 된다는 것이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react\redux.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react\redux.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a. 스토어: 애플리케이션의 상태 값들을 내장하고 있다. 스토어는 하나만 존재한다.
 b. 액션: 상태 변화를 일으킬 때 참조하는 객체.
@@ -1496,21 +1496,21 @@ CSS 전처리기는 프로그래밍 한 요소를 접목했기 때문에 분기�
 
 &lt;p&gt;인스타그램 계정으로 로그인한 후 액세스 권한을 받아옵니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\insta\instagram-token.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\insta\instagram-token.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 아래와 같이 보이는 페이지에서 원하는 값을 설정 합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\insta\2019-11-28 185648.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\insta\2019-11-28 185648.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;아래로 내려 GetCode!를 누르게 되면,&lt;/p&gt;
 
 &lt;p&gt;사용할수있는 HTML iframe 태그를 주게 됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\insta\last.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\insta\last.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\insta\code.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\insta\code.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\insta\2019-11-29 110155.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\insta\2019-11-29 110155.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
 
       
       

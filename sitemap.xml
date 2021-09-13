@@ -755,4 +755,132 @@
 
     </url>
     
+    <url>
+        <loc>https://simplehanlab.github.io/tensorflow_pycharm_anaconda.html</loc>
+        
+        <lastmod>2019-08-20T17:20:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/tensorflow_install_anaconda.html</loc>
+        
+        <lastmod>2019-08-20T16:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/google-analytics.html</loc>
+        
+        <lastmod>2019-08-09T15:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/ssh-how_to_setup_ssh.html</loc>
+        
+        <lastmod>2019-08-07T15:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/write-post.html</loc>
+        
+        <lastmod>2019-08-01T17:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/run-on-local.html</loc>
+        
+        <lastmod>2019-07-30T11:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/ssl-nginx-tomcat.html</loc>
+        
+        <lastmod>2019-07-30T11:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://simplehanlab.github.io/ssl-letsencrypt.html</loc>
+        
+        <lastmod>2019-07-30T11:00:00+00:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
 </urlset>

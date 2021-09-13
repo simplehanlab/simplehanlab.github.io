@@ -220,21 +220,21 @@ into the {body} of the default.hbs template -->
 
 <p><a href="https://github.com/naver/smarteditor2/releases">SmartEditor github 다운로드 페이지</a>에서 배포판을 다운받을 수 있다. <strong>처음엔 zip 파일을 다운받아서 진행했는데 뭔가 파일이 빠져있는 것 같았다. 안에 skin.html에서 경로에 없는 파일을 참조하고 있길래 zip 파일 리소스는 다 지우고 tgz 파일을 다시 받아서 진행했다.</strong></p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-1.JPG" alt="add-smarteditor-1" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-1.JPG" alt="add-smarteditor-1" /></p>
 
 <p>tgz 파일의 압축을 풀어보면 package 폴더가 나오고 안에 들어가면 뭔가 파일이 몇개 있는데, 다 무시하고 dist 폴더 안의 내용만 있으면 된다. <em>(smarteditor2-2.10.0/package/dist)</em></p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-2.JPG" alt="add-smarteditor-2" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-2.JPG" alt="add-smarteditor-2" /></p>
 
 <p>해당 폴더 안의 파일들을 전부 복사해서 src/resources/static/libs/smarteditor 폴더에 넣어주자.</p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-3.JPG" alt="add-smarteditor-3" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-3.JPG" alt="add-smarteditor-3" /></p>
 
 <h2 id="코드-생성">코드 생성</h2>
 
 <p>다음으로 smarteditor 용 controller와 view를 작성해보자. 먼저 <em>com.example.demo.smarteditor.controller</em> 패키지를 만들고 <em>SmartEditorController.java</em> 파일을 만들자.</p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-4.JPG" alt="add-smarteditor-4" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-4.JPG" alt="add-smarteditor-4" /></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.example.demo.smarteditor.controller</span><span class="o">;</span>
 
@@ -252,7 +252,7 @@ into the {body} of the default.hbs template -->
 
 <p>그 다음 JSP 파일을 만들자. 이름은 controller에서 지정해준 것 처럼 smartEditor.jsp로 만들었다. js 코드는 간단하기 때문에 jsp 내부 하단에 바로 작성하였다.</p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-5.JPG" alt="add-smarteditor-5" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-5.JPG" alt="add-smarteditor-5" /></p>
 
 <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=EUC-KR"</span><span class="na"> pageEncoding=</span><span class="s">"EUC-KR"</span><span class="nt">%&gt;</span>
 <span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="nt">%&gt;</span>
@@ -288,7 +288,7 @@ into the {body} of the default.hbs template -->
 
 <p>이제 브라우저에서 http://localhost:8080/smarteditor 로 접속해보자. 아래와 같이 나오면 성공이다.</p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-6.JPG" alt="add-smarteditor-6" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-6.JPG" alt="add-smarteditor-6" /></p>
 
 <h2 id="에디터에-작성한-내용-js에서-불러오기">에디터에 작성한 내용 JS에서 불러오기</h2>
 
@@ -335,7 +335,7 @@ into the {body} of the default.hbs template -->
 
 <p>버튼을 하나 추가했고, 해당 버튼에 이벤트를 하나 추가했다. 이제 에디터에 아무 내용을 작성한 뒤 개발자 도구의 콘솔창을 한번 봐보자.</p>
 
-<p><img src="\assets\images\add-smarteditor\add-smarteditor-7.JPG" alt="add-smarteditor-7" /></p>
+<p><img src="\assets\built\images\add-smarteditor\add-smarteditor-7.JPG" alt="add-smarteditor-7" /></p>
 
 <p>콘솔에 HTML 구조로 찍힌다면 성공했다.</p>
 
@@ -554,6 +554,22 @@ into the {body} of the default.hbs template -->
                                         
                                         
                                     
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
                                   
                                 
                                   

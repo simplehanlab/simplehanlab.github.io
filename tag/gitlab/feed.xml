@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/gitlab/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/gitlab/feed.xml</id>
 
   
@@ -140,21 +140,21 @@
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum list installed | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;policycoreutils-python
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144623259.png&quot; alt=&quot;image-20210113144623259&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144623259.png&quot; alt=&quot;image-20210113144623259&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;2-openssh-server&quot;&gt;2. openssh-server&lt;/h6&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum list installed | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;openssh-server
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144640124.png&quot; alt=&quot;image-20210113144640124&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144640124.png&quot; alt=&quot;image-20210113144640124&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;3--openssh-server-구동-여부-확인&quot;&gt;3.  openssh-server 구동 여부 확인&lt;/h6&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;systemctl status sshd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\gitlab\1\image-20210113144737316.png&quot; alt=&quot;image-20210113144737316&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\gitlab\1\image-20210113144737316.png&quot; alt=&quot;image-20210113144737316&quot; /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;4-메일링-서비스를-위한-postfix-설치필요시&quot;&gt;4. 메일링 서비스를 위한 postfix 설치(필요시)&lt;/h6&gt;
 

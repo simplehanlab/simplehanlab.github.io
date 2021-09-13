@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/bootstrap/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/bootstrap/feed.xml</id>
 
   
@@ -59,15 +59,15 @@
 
 &lt;p&gt;일단 &lt;a href=&quot;https://getbootstrap.com/docs/4.4/getting-started/download/&quot;&gt;Bootstrap 다운로드 사이트&lt;/a&gt;에 접속하여 Bootstrap 리소스를 다운받자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-bootstrap\add-bootstrap-1.JPG&quot; alt=&quot;add-bootstrap-1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-bootstrap\add-bootstrap-1.JPG&quot; alt=&quot;add-bootstrap-1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;다운로드 받은 리소스를 내 프로젝트의 src/main/resources/static/libs 폴더 안에 넣어주자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-bootstrap\add-bootstrap-2.JPG&quot; alt=&quot;add-bootstrap-2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-bootstrap\add-bootstrap-2.JPG&quot; alt=&quot;add-bootstrap-2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;추가로 bootstrap 사용에 jQuery가 필요하므로 &lt;a href=&quot;https://jquery.com/download/&quot;&gt;jQuery 다운로드 사이트&lt;/a&gt;에서 jQuery도 다운받아주자. &lt;em&gt;(jQuery 역시 CDN, 패키지 매니저를 통해 적용할 수 있다.)&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-bootstrap\add-bootstrap-3.JPG&quot; alt=&quot;add-bootstrap-3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-bootstrap\add-bootstrap-3.JPG&quot; alt=&quot;add-bootstrap-3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;필요한 모듈을 다 받았다면 JSP 파일에 아래 코드를 추가하여 모듈을 적용해주자.&lt;/p&gt;
 
@@ -118,7 +118,7 @@
 
 &lt;p&gt;코드 적용 후 브라우저에서 키보드의&lt;strong&gt;F12&lt;/strong&gt;키를 눌러서 개발자 도구를 켠 뒤에 &lt;strong&gt;Network&lt;/strong&gt;탭을 클릭한 뒤 브라우저를 새로고침 해보자. 그 후 아래처럼 리소스를 에러없이 불러오면 성공이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-bootstrap\add-bootstrap-4.JPG&quot; alt=&quot;add-bootstrap-4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-bootstrap\add-bootstrap-4.JPG&quot; alt=&quot;add-bootstrap-4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 다음 JSP 파일을 아래 코드와 같이 수정한 뒤 브라우저를 새로고침하여 bootstrap이 잘 적용되었는지 확인해보자.&lt;/p&gt;
 
@@ -176,7 +176,7 @@
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-bootstrap\add-bootstrap-5.JPG&quot; alt=&quot;add-bootstrap-5&quot; /&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-bootstrap\add-bootstrap-5.JPG&quot; alt=&quot;add-bootstrap-5&quot; /&gt;&lt;/p&gt;</content>
 
       
       

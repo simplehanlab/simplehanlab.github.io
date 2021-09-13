@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/jasperstudio/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/jasperstudio/feed.xml</id>
 
   
@@ -40,7 +40,7 @@
       <content type="html" xml:base="https://simplehanlab.github.io/jasper-2">&lt;h3 id=&quot;1-jasperstudio-java-spring-project-연동-사용법&quot;&gt;1. JasperStudio Java Spring Project 연동 사용법&lt;/h3&gt;
 
 &lt;p&gt;먼저 spring mvc project를 생성합니다.
-&lt;img src=&quot;\assets\images\jasper\20200225165313_048_STS.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;\assets\built\images\jasper\20200225165313_048_STS.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 연동에 필요한 pom.xml의 dependency를 추가해줍니다&lt;/p&gt;
 
@@ -180,15 +180,15 @@
 &lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/jasperstudio/&quot; target=&quot;_blank&quot;&gt;JasperStudio&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;New &amp;gt; Jasper Report 를눌러 jrxml 파일을 생성합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200224183604_025_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183604_025_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;리포트 템플릿을 통해 기본 레이아웃 생성 가능 합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200224183616_026_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183616_026_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 DB 설정 등이 가능한데, 작업 후에도 가능하므로 Finish 합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200224183634_027_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
-  &lt;img src=&quot;\assets\images\jasper\20200224183649_028_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
-  &lt;img src=&quot;\assets\images\jasper\20200224183654_029_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183634_027_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183649_028_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183654_029_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그리고 작업화면에서&lt;/p&gt;
 
@@ -197,47 +197,47 @@
 &lt;p&gt;등을 레이아웃에 삽입하거나,&lt;/p&gt;
 
 &lt;p&gt;source 탭을 눌러 코드로 작성도 가능합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200224185048_031_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224185048_031_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 DB 연동을 위해 Data Adapters에서 우클릭 후 
-  &lt;img src=&quot;\assets\images\jasper\20200225110617_034_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225110617_034_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Create Data Adapter를 눌러 원하는 데이터&lt;/p&gt;
 
 &lt;p&gt;(현재 예제에서는 MySQL로 진행) 선택 가능 합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225110710_035_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225110710_035_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Database JDBC Connection탭을 선택 후 Next
-  &lt;img src=&quot;\assets\images\jasper\20200224183604_025_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200224183604_025_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;JDBC Driver에서 MySQL을 선택, DB 정보 입력 후
-  &lt;img src=&quot;\assets\images\jasper\20200225110933_036_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225110933_036_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Test 버튼을 눌러, 테스트하여 다음과 같은 창이 나오면 성공입니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225111034_037_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225111034_037_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;실패 시 Driver Classpath에 maven mysql files를 추가합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225111234_038_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225111234_038_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;SQL문을 통해 Outline 탭의 Parameters에서&lt;/p&gt;
 
 &lt;p&gt;사용 할 수 있는 Data paramers를 설정 할 수 있습니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225111458_039_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
-  &lt;img src=&quot;\assets\images\jasper\20200225111521_041_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225111458_039_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225111521_041_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 후 드래그 앤 드롭 또는 텍스트필드를 생성 후&lt;/p&gt;
 
 &lt;p&gt;다음과 같이 입력하여 data를 사용 할 수 있습니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225111622_044_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225111622_044_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이런 방식으로 간단히 보여줄 페이지를 작성 합니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225112529_045_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225112529_045_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Preview를 누르면 작업 완료 내용을 미리 볼 수 있습니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225112628_046_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\jasper\20200225112628_046_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;작업이 끝났다면, jrxml파일을 jasper로 컴파일할 수도 있습니다.
-  &lt;img src=&quot;\assets\images\jasper\20200225112841_047_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+  &lt;img src=&quot;\assets\built\images\jasper\20200225112841_047_Jaspersoft_Studio.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
 
       
       

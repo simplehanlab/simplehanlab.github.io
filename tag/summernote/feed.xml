@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/summernote/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/summernote/feed.xml</id>
 
   
@@ -47,17 +47,17 @@
 
 &lt;p&gt;일단 처음으로 &lt;a href=&quot;https://github.com/summernote/summernote/releases&quot;&gt;Summernote 다운로드 페이지&lt;/a&gt;에서 리소스를 다운받자. 필자는 zip 파일을 다운받았다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-2.JPG&quot; alt=&quot;add-summernote-2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-summernote\add-summernote-2.JPG&quot; alt=&quot;add-summernote-2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;다운받은 zip 파일의 압축을 푼 뒤, dist폴더 내부의 파일들을 src/resources/libs/summernote에 넣어주자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-3.JPG&quot; alt=&quot;add-summernote-3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-summernote\add-summernote-3.JPG&quot; alt=&quot;add-summernote-3&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;코드-생성&quot;&gt;코드 생성&lt;/h2&gt;
 
 &lt;p&gt;다음으로 summernote용 controller와 view를 작성해보자. 먼저 &lt;em&gt;com.example.demo.summernote.controller&lt;/em&gt; 패키지를 만들고 &lt;em&gt;SummernoteController.java&lt;/em&gt; 파일을 만들자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-4.JPG&quot; alt=&quot;add-summernote-4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-summernote\add-summernote-4.JPG&quot; alt=&quot;add-summernote-4&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.summernote.controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
@@ -75,7 +75,7 @@
 
 &lt;p&gt;그 다음 JSP 파일을 만들자. 이름은 controller에서 지정해준 것 처럼 summernote.jsp로 만들었다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-5.JPG&quot; alt=&quot;add-summernote-5&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-summernote\add-summernote-5.JPG&quot; alt=&quot;add-summernote-5&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ page &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;language=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html; charset=EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; pageEncoding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ taglib &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prefix=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://java.sun.com/jsp/jstl/core&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
@@ -112,7 +112,7 @@
 
 &lt;p&gt;이제 브라우저에서 http://localhost:8080/summernote로 접속하여 summernote 에디터가 잘 뜨는지 확인해보자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-summernote\add-summernote-6.JPG&quot; alt=&quot;add-summernote-6&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-summernote\add-summernote-6.JPG&quot; alt=&quot;add-summernote-6&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;summernote는 이미지 업로드 시 해당 이미지를 base64로 변환한 뒤 바로 코드로 적용하도록 동작한다. 완전히 클라이언트 단에서 모든 작업이 이루어지게 되어 있는데, 이를 이대로 사용할 수도 있지만 서버에 작성한 HTML 코드를 전송했을 때 base64의 어마어마한 텍스트가 같이 전달된다. 이미지를 10개, 20개 추가한 뒤 서버로 보내게 되면 텍스트의 양은 어마어마해져서 이를 조금 수정하려고 한다.&lt;/p&gt;
 

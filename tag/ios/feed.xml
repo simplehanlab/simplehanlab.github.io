@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/ios/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/ios/feed.xml</id>
 
   
@@ -132,7 +132,7 @@ x.x.x
 
 &lt;p&gt;그 후 상단 메뉴에서 Xcode &amp;gt; Preferences… &amp;gt; Locations로 이동하여 아래와 같이 Command Line Tools가 잘 설정되었는지 확인합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react-native-ios\r1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react-native-ios\r1.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;만약 사진과 같이 설정되어 있지 않다면,&lt;/p&gt;
 
@@ -183,8 +183,8 @@ npm run ios
 
 &lt;p&gt;잘 실행이 되었다면, 아래와 같은 화면을 확인할 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\react-native-ios\r2.png&quot; alt=&quot;img&quot; /&gt;
-&lt;img src=&quot;\assets\images\react-native-ios\r3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\react-native-ios\r2.png&quot; alt=&quot;img&quot; /&gt;
+&lt;img src=&quot;\assets\built\images\react-native-ios\r3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content>
 
       
       
@@ -244,11 +244,11 @@ npm run ios
 
 &lt;p&gt;사용자 변수 : %변수%\bin&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\flutter\1.png&quot; alt=&quot;img&quot; /&gt;
-  &lt;img src=&quot;\assets\images\flutter\2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\flutter\1.png&quot; alt=&quot;img&quot; /&gt;
+  &lt;img src=&quot;\assets\built\images\flutter\2.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;cmd에서 flutter doctor 명령 실행이 되는지 확인합니다.
-  &lt;img src=&quot;\assets\images\flutter\3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+  &lt;img src=&quot;\assets\built\images\flutter\3.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그림과 같이 초록 체크가 되었다면, 정상적으로 설치되었다는 뜻이며
   만약 그렇지 않을경우, 어떤게 설치가 안되었는지, 필요한게 무엇인지 알려줍니다.&lt;/p&gt;

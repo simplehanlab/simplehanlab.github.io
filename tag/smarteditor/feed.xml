@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://simplehanlab.github.io/tag/smarteditor/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://simplehanlab.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-13T01:29:54+00:00</updated>
+  <updated>2021-09-13T01:50:55+00:00</updated>
   <id>https://simplehanlab.github.io/tag/smarteditor/feed.xml</id>
 
   
@@ -47,21 +47,21 @@
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/naver/smarteditor2/releases&quot;&gt;SmartEditor github 다운로드 페이지&lt;/a&gt;에서 배포판을 다운받을 수 있다. &lt;strong&gt;처음엔 zip 파일을 다운받아서 진행했는데 뭔가 파일이 빠져있는 것 같았다. 안에 skin.html에서 경로에 없는 파일을 참조하고 있길래 zip 파일 리소스는 다 지우고 tgz 파일을 다시 받아서 진행했다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-1.JPG&quot; alt=&quot;add-smarteditor-1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-1.JPG&quot; alt=&quot;add-smarteditor-1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;tgz 파일의 압축을 풀어보면 package 폴더가 나오고 안에 들어가면 뭔가 파일이 몇개 있는데, 다 무시하고 dist 폴더 안의 내용만 있으면 된다. &lt;em&gt;(smarteditor2-2.10.0/package/dist)&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-2.JPG&quot; alt=&quot;add-smarteditor-2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-2.JPG&quot; alt=&quot;add-smarteditor-2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;해당 폴더 안의 파일들을 전부 복사해서 src/resources/static/libs/smarteditor 폴더에 넣어주자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-3.JPG&quot; alt=&quot;add-smarteditor-3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-3.JPG&quot; alt=&quot;add-smarteditor-3&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;코드-생성&quot;&gt;코드 생성&lt;/h2&gt;
 
 &lt;p&gt;다음으로 smarteditor 용 controller와 view를 작성해보자. 먼저 &lt;em&gt;com.example.demo.smarteditor.controller&lt;/em&gt; 패키지를 만들고 &lt;em&gt;SmartEditorController.java&lt;/em&gt; 파일을 만들자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-4.JPG&quot; alt=&quot;add-smarteditor-4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-4.JPG&quot; alt=&quot;add-smarteditor-4&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.example.demo.smarteditor.controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
@@ -79,7 +79,7 @@
 
 &lt;p&gt;그 다음 JSP 파일을 만들자. 이름은 controller에서 지정해준 것 처럼 smartEditor.jsp로 만들었다. js 코드는 간단하기 때문에 jsp 내부 하단에 바로 작성하였다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-5.JPG&quot; alt=&quot;add-smarteditor-5&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-5.JPG&quot; alt=&quot;add-smarteditor-5&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-jsp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ page &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;language=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html; charset=EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; pageEncoding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EUC-KR&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;%@ taglib &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prefix=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt; uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://java.sun.com/jsp/jstl/core&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;%&amp;gt;&lt;/span&gt;
@@ -115,7 +115,7 @@
 
 &lt;p&gt;이제 브라우저에서 http://localhost:8080/smarteditor 로 접속해보자. 아래와 같이 나오면 성공이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-6.JPG&quot; alt=&quot;add-smarteditor-6&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-6.JPG&quot; alt=&quot;add-smarteditor-6&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;에디터에-작성한-내용-js에서-불러오기&quot;&gt;에디터에 작성한 내용 JS에서 불러오기&lt;/h2&gt;
 
@@ -162,7 +162,7 @@
 
 &lt;p&gt;버튼을 하나 추가했고, 해당 버튼에 이벤트를 하나 추가했다. 이제 에디터에 아무 내용을 작성한 뒤 개발자 도구의 콘솔창을 한번 봐보자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;\assets\images\add-smarteditor\add-smarteditor-7.JPG&quot; alt=&quot;add-smarteditor-7&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\built\images\add-smarteditor\add-smarteditor-7.JPG&quot; alt=&quot;add-smarteditor-7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;콘솔에 HTML 구조로 찍힌다면 성공했다.&lt;/p&gt;
 
